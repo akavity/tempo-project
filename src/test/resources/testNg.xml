@@ -8,6 +8,15 @@
                     <include name="checkUserRegistered"/>
                 </methods>
             </class>
+            <class name="PizzaShoppingTest">
+                <methods>
+                    <include name="checkPizzaShoppingTest1"/>
+                    <include name="checkPizzaShoppingTest2"/>
+                    <include name="checkPizzaShoppingTest3"/>
+                    <include name="checkPizzaShoppingTest4"/>
+                    <include name="checkPizzaShoppingTest5"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
