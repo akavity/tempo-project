@@ -1,4 +1,4 @@
-package org.example.waiters;
+package org.example.utils;
 
 import org.example.driver.DriverManager;
 import org.openqa.selenium.WebElement;

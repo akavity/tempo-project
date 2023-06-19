@@ -8,9 +8,7 @@ import java.util.ResourceBundle;
 
 public class BaseTest {
     protected WebDriver driver;
-
     static ResourceBundle bundle = ResourceBundle.getBundle("test_framework");
-
     private final String URL = bundle.getString("path_to_pizza");
 
     @BeforeTest

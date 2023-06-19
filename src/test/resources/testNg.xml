@@ -2,9 +2,10 @@
 <suite name="MainTest">
     <test name="MainTest" parallel="false">
         <classes>
-            <class name="RegistrationTest">
+            <class name="RegistrationNegativeTest">
                 <methods>
                     <include name="checkTempoPizzaRegistration"/>
+                    <include name="checkUserRegistered"/>
                 </methods>
             </class>
         </classes>

@@ -3,7 +3,7 @@ package org.example.steps;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.example.pages.RegistrationPage;
-import org.example.waiters.Waiters;
+import org.example.utils.Waiters;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
@@ -31,6 +31,11 @@ public class RegistrationSteps {
         registrationPage.getPasswordRepeatField().sendKeys(password);
     }
 
+    @Step("Get User Account Error")
+    public boolean isThereAccountError() {
+        return registrationPage.getUserAccountError().isDisplayed();
+    }
+
     @Step("Enter first name, last name")
     public void enterUser(String userData) {
         registrationPage.getUserField().sendKeys(userData);
@@ -38,12 +43,13 @@ public class RegistrationSteps {
 
     @Step("Enter mobile phone")
     public void enterPhone(String phone) {
+        Waiters.waitForVisibility(registrationPage.getPhoneField(), 30);
         registrationPage.getPhoneField().sendKeys(phone);
     }
 
     @Step("Click gender button")
     public void clickGenderButton() {
-        registrationPage.getGenderButton().click();
+        registrationPage.getGenderMaleButton().click();
     }
 
     @Step("Choose age")
@@ -81,5 +87,30 @@ public class RegistrationSteps {
     @Step("Enter floor")
     public void enterFloor(String floor) {
         registrationPage.getFloorField().sendKeys(floor);
+    }
+
+    @Step("Click submit button")
+    public void clickSubmitButton() {
+        registrationPage.getSubmitButton().click();
+    }
+
+    @Step("Get Error Phone")
+    public boolean isThereErrorPhone() {
+        return registrationPage.getErrorPhone().isDisplayed();
+    }
+
+    @Step("Enter user account email")
+    public void enterUserAccountEmail(String email) {
+        registrationPage.getUserAccountEmail().sendKeys(email);
+    }
+
+    @Step("Enter user account password")
+    public void enterUserAccountPassword(String password) {
+        registrationPage.getUserAccountPassword().sendKeys(password);
+    }
+
+    @Step("Click user account submit button")
+    public void clickAccountSubmitButton() {
+        registrationPage.getSubmitAccountButton().click();
     }
 }
