@@ -17,20 +17,23 @@ public class PizzaShoppingSteps {
 
     @Step("Enter Bavaria pizza")
     public void enterBavariaPizzaButton() {
+        log.info("Enter Bavaria pizza");
         pizzaShoppingPage.getBavarianPizzaButton().click();
     }
 
     @Step("Enter Tempting pizza")
     public void enterTemptingPizzaButton() {
+        log.info("Enter Tempting pizza");
         pizzaShoppingPage.getTemptingPizzaButton().click();
     }
 
     @Step("Enter Sicily pizza")
     public void enterSicilyPizzaButton() {
+        log.info("Enter Sicily pizza");
         pizzaShoppingPage.getSicilyPizzaButton().click();
     }
 
-    @Step
+    @Step("Remove pizza from cart")
     public void isEmptyBasket() {
         int flag = 0;
         while (!pizzaShoppingPage.getEmptyBasketField().isDisplayed()) {
@@ -45,12 +48,14 @@ public class PizzaShoppingSteps {
 
     @Step("Enter submit pizza")
     public void enterSubmitButton() {
+        log.info("Enter submit pizza");
         Waiters.waitForVisibility(pizzaShoppingPage.getSubmitButton(), 20);
         pizzaShoppingPage.getSubmitButton().click();
     }
 
     @Step("Get pizza")
     public String getPrice() {
+        log.info("Get pizza");
         Waiters.waitForVisibility(pizzaShoppingPage.getPriceField(), 30);
         return pizzaShoppingPage.getPriceField().getAttribute("data-price");
     }
