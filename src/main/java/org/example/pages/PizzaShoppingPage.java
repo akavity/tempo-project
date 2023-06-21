@@ -16,19 +16,19 @@ public class PizzaShoppingPage extends BasePage {
     @FindBy(xpath = "//span[contains(text(), 'Сицилийская')]/../following-sibling::div//button")
     private WebElement sicilyPizzaButton;
 
-    @FindBy(xpath = "//*[@id=\"order_pizza_popup\"]//button[contains(text(), 'Заказ')]")
+    @FindBy(xpath = "//*[@id='order_pizza_popup']//button[contains(text(), 'Заказ')]")
     private WebElement submitButton;
 
-    @FindBy(xpath = "//div[@class=\"basketOuter\"]//span[@class=\"bs-price\"]//span[@class=\"price_byn\"]")
+    @FindBy(xpath = "//div[@class='basketOuter']//span[@class='bs-price']//span[@class='price_byn']")
     private WebElement priceField;
 
-    @FindBy(xpath = "//div[@class=\"bs-empty-col\"]")
+    @FindBy(xpath = "//div[@class='bs-empty-col']")
     private WebElement emptyBasketField;
 
-    @FindBy(xpath = "//a[@title=\"Удалить из заказа\"]")
+    @FindBy(xpath = "//a[@title='Удалить из заказа']")
     private WebElement removeOrderButton;
 
-    @FindBy(xpath = "//div[@class=\"basket_placeholder\"]//div[@class=\"bs-toggler openClose\"]")
+    @FindBy(xpath = "//div[@class='basket_placeholder']//div[@class='bs-toggler openClose']")
     private WebElement openCloseButton;
 
     public PizzaShoppingPage(WebDriver driver) {
