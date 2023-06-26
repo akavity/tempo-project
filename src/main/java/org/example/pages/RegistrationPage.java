@@ -49,7 +49,9 @@ public class RegistrationPage extends BasePage {
     @FindBy(xpath = "//button[contains (@class,'btn button')]")
     private WebElement submitButton;
     @FindBy(xpath = "//div[contains (text(),'Контактный телефон')]")
-    private WebElement errorPhone;
+    private WebElement errorPhoneField;
+    @FindBy(xpath = "//div[contains (text(),' Недопустимый формат')]")
+    private WebElement errorStreetField;
 
     public RegistrationPage(WebDriver driver) {
         super(driver);
@@ -132,7 +134,11 @@ public class RegistrationPage extends BasePage {
     }
 
     public WebElement getErrorPhone() {
-        return errorPhone;
+        return errorPhoneField;
+    }
+
+    public WebElement getErrorStreet() {
+        return errorStreetField;
     }
 
     public WebElement getSubmitButton() {
