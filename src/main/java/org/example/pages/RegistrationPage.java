@@ -1,13 +1,10 @@
 package org.example.pages;
 
-import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-@Log4j2
 public class RegistrationPage extends BasePage {
-
     @FindBy(xpath = "//input[@name='astroauth_login']")
     private WebElement accountEmailField;
     @FindBy(xpath = "//input[@name='astroauth_pass']")

@@ -12,4 +12,12 @@ public class Waiters {
         new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(seconds))
                 .until(ExpectedConditions.visibilityOf(element));
     }
+
+    public static void sleep() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

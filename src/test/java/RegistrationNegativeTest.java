@@ -1,5 +1,6 @@
 import org.example.driver.DriverManager;
 import org.example.models.UserData;
+import org.example.steps.MoveToSteps;
 import org.example.steps.RegistrationSteps;
 import org.example.utils.AllureListener;
 import org.example.utils.JsonReader;
@@ -13,16 +14,19 @@ import org.testng.annotations.Test;
 public class RegistrationNegativeTest extends BaseTest {
     protected WebDriver driver;
     private RegistrationSteps registrationSteps;
+    private MoveToSteps moveToSteps;
 
     @BeforeClass
     public void preparationForTest() {
         driver = DriverManager.getDriver();
         registrationSteps = new RegistrationSteps(driver);
+        moveToSteps = new MoveToSteps(driver);
     }
 
     @Test(description = "Check registration form data",
             dataProvider = "userData", dataProviderClass = JsonReader.class)
     public void checkTempoPizzaRegistration(UserData userData) {
+        moveToSteps.moveToRegistrationForm();
         registrationSteps.enterEmail(userData.getEmail());
         registrationSteps.enterPassword(userData.getPassword());
         registrationSteps.repeatPassword(userData.getPassword());
@@ -43,6 +47,7 @@ public class RegistrationNegativeTest extends BaseTest {
     @Test(description = "Check user registered",
             dataProvider = "userData", dataProviderClass = JsonReader.class)
     public void checkUserRegistered(UserData userData) {
+        moveToSteps.moveToRegistrationForm();
         registrationSteps.enterUserAccountEmail(userData.getEmail());
         registrationSteps.enterUserAccountPassword(userData.getPassword());
         registrationSteps.clickAccountSubmitButton();
