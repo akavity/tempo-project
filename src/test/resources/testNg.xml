@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="MainTest">
+    <test name="MainTest" parallel="false">
+        <classes>
+            <class name="org.example.RegistrationNegativeTest">
+                <methods>
+                    <include name="checkTempoPizzaRegistration"/>
+                    <include name="checkUserRegistered"/>
+                </methods>
+            </class>
+            <class name="org.example.PizzaShoppingTest">
+                <methods>
+                    <include name="checkPriceOfGoodInBasketTopTest1"/>
+                    <include name="checkPriceOfGoodInBasketTopTest2"/>
+                    <include name="checkPriceOfGoodInBasketTopTest3"/>
+                    <include name="checkPriceOfTwoGoodsInBasketTop"/>
+                    <include name="checkPriceOfTreeGoodsInBasketTop"/>
+                    <include name="checkPriceOfGoodInCart"/>
+                    <include name="checkPriceOfTwoGoodsInCart"/>
+                    <include name="checkPriceOfTreeGoodsInCart"/>
+                    <include name="checkSortingByVeganType"/>
+                    <include name="checkSortingByChiliType"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
