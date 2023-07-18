@@ -10,6 +10,6 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PizzaTypeData {
-    String pizzaType;
-    List<String> pizzaNames;
+    List<String> veganPizzaNames;
+    List<String> chiliPizzaNames;
 }

@@ -1,3 +1,5 @@
+package org.example;
+
 import org.example.driver.DriverManager;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;

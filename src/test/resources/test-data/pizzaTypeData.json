@@ -1,15 +1,11 @@
 [
   {
-    "pizzaType": "vegan",
-    "pizzaNames": [
+    "veganPizzaNames": [
       "Маргарита",
       "Грибная",
       "Греческая"
-    ]
-  },
-  {
-    "pizzaType": "chili",
-    "pizzaNames": [
+    ],
+    "chiliPizzaNames": [
       "Сицилийская",
       "Огненная",
       "Охотничья",

@@ -1,8 +1,11 @@
 package org.example.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.List;
 
 public class ShoppingPage extends BasePage {
     @FindBy(xpath = "//span[contains(text(), 'Баварская')]/../following-sibling::div//button")
@@ -21,6 +24,16 @@ public class ShoppingPage extends BasePage {
     private WebElement removeOrderButton;
     @FindBy(xpath = "//div[@class='basket_placeholder']//div[@class='bs-toggler openClose']")
     private WebElement openCloseButton;
+    @FindBy(xpath = "//div[@id='basket_sum_all']//span[@class='price_byn']")
+    private WebElement priceCartField;
+    @FindBy(xpath = "//h3//span")
+    private List<WebElement> goodsNamesFields;
+    @FindBy(xpath = "//div[@class='pizzaType']//label[@class='vegan']")
+    private WebElement veganTypeButton;
+    @FindBy(xpath = "//div[@class='pizzaType']//label[@class='chili']")
+    private WebElement chiliTypeButton;
+    @FindBy(id = "getResultPickup")
+    private WebElement resultButton;
 
     public ShoppingPage(WebDriver driver) {
         super(driver);
@@ -56,5 +69,25 @@ public class ShoppingPage extends BasePage {
 
     public WebElement getOpenCloseButton() {
         return openCloseButton;
+    }
+
+    public WebElement getPriceCartField() {
+        return priceCartField;
+    }
+
+    public List<WebElement> getGoodsNames() {
+        return goodsNamesFields;
+    }
+
+    public WebElement getVeganTypeButton() {
+        return veganTypeButton;
+    }
+
+    public WebElement getChiliTypeButton() {
+        return chiliTypeButton;
+    }
+
+    public WebElement getResultButton() {
+        return resultButton;
     }
 }
